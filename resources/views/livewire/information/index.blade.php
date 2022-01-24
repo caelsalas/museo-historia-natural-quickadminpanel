@@ -60,6 +60,9 @@
                             {{ trans('cruds.information.fields.image') }}
                         </th>
                         <th>
+                            {{ trans('cruds.information.fields.image_en') }}
+                        </th>
+                        <th>
                             {{ trans('cruds.information.fields.created_at') }}
                             @include('components.table.sort', ['field' => 'created_at'])
                         </th>
@@ -87,6 +90,13 @@
                             </td>
                             <td>
                                 @foreach($information->image as $key => $entry)
+                                    <a class="link-photo" href="{{ $entry['url'] }}">
+                                        <img src="{{ $entry['thumbnail'] }}" alt="{{ $entry['name'] }}" title="{{ $entry['name'] }}">
+                                    </a>
+                                @endforeach
+                            </td>
+                            <td>
+                                @foreach($information->image_en as $key => $entry)
                                     <a class="link-photo" href="{{ $entry['url'] }}">
                                         <img src="{{ $entry['thumbnail'] }}" alt="{{ $entry['name'] }}" title="{{ $entry['name'] }}">
                                     </a>

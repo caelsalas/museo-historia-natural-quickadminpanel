@@ -551,6 +551,8 @@ return [
             'deleted_at_helper' => ' ',
             'image'             => 'Imagen',
             'image_helper'      => ' ',
+            'image_en'          => 'Imagen (Ingles)',
+            'image_en_helper'   => ' ',
         ],
     ],
 ];

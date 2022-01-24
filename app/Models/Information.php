@@ -37,6 +37,7 @@ class Information extends Model implements HasMedia
 
     protected $appends = [
         'image',
+        'image_en',
     ];
 
     protected $fillable = [
@@ -72,6 +73,18 @@ class Information extends Model implements HasMedia
     public function getImageAttribute()
     {
         return $this->getMedia('information_image')->map(function ($item) {
+            $media = $item->toArray();
+            $media['url'] = $item->getUrl();
+            $media['thumbnail'] = $item->getUrl('thumbnail');
+            $media['preview_thumbnail'] = $item->getUrl('preview_thumbnail');
+
+            return $media;
+        });
+    }
+
+    public function getImageEnAttribute()
+    {
+        return $this->getMedia('information_image_en')->map(function ($item) {
             $media = $item->toArray();
             $media['url'] = $item->getUrl();
             $media['thumbnail'] = $item->getUrl('thumbnail');
