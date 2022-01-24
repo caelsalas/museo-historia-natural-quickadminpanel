@@ -70,19 +70,19 @@ class Edit extends Component
         return [
             'information.schedule' => [
                 'string',
-                'required',
+                'nullable',
             ],
             'information.location' => [
                 'string',
-                'required',
+                'nullable',
             ],
             'information.tickets' => [
                 'string',
-                'required',
+                'nullable',
             ],
             'mediaCollections.information_image' => [
                 'array',
-                'required',
+                'nullable',
             ],
             'mediaCollections.information_image.*.id' => [
                 'integer',
