@@ -1,8 +1,8 @@
 <form wire:submit.prevent="submit" class="pt-3">
 
     <div class="form-group {{ $errors->has('information.schedule') ? 'invalid' : '' }}">
-        <label class="form-label required" for="schedule">{{ trans('cruds.information.fields.schedule') }}</label>
-        <textarea class="form-control" name="schedule" id="schedule" required wire:model.defer="information.schedule" rows="4"></textarea>
+        <label class="form-label" for="schedule">{{ trans('cruds.information.fields.schedule') }}</label>
+        <textarea class="form-control" name="schedule" id="schedule" wire:model.defer="information.schedule" rows="4"></textarea>
         <div class="validation-message">
             {{ $errors->first('information.schedule') }}
         </div>
@@ -11,8 +11,8 @@
         </div>
     </div>
     <div class="form-group {{ $errors->has('information.location') ? 'invalid' : '' }}">
-        <label class="form-label required" for="location">{{ trans('cruds.information.fields.location') }}</label>
-        <textarea class="form-control" name="location" id="location" required wire:model.defer="information.location" rows="4"></textarea>
+        <label class="form-label" for="location">{{ trans('cruds.information.fields.location') }}</label>
+        <textarea class="form-control" name="location" id="location" wire:model.defer="information.location" rows="4"></textarea>
         <div class="validation-message">
             {{ $errors->first('information.location') }}
         </div>
@@ -21,8 +21,8 @@
         </div>
     </div>
     <div class="form-group {{ $errors->has('information.tickets') ? 'invalid' : '' }}">
-        <label class="form-label required" for="tickets">{{ trans('cruds.information.fields.tickets') }}</label>
-        <textarea class="form-control" name="tickets" id="tickets" required wire:model.defer="information.tickets" rows="4"></textarea>
+        <label class="form-label" for="tickets">{{ trans('cruds.information.fields.tickets') }}</label>
+        <textarea class="form-control" name="tickets" id="tickets" wire:model.defer="information.tickets" rows="4"></textarea>
         <div class="validation-message">
             {{ $errors->first('information.tickets') }}
         </div>
@@ -31,7 +31,7 @@
         </div>
     </div>
     <div class="form-group {{ $errors->has('mediaCollections.information_image') ? 'invalid' : '' }}">
-        <label class="form-label required" for="image">{{ trans('cruds.information.fields.image') }}</label>
+        <label class="form-label" for="image">{{ trans('cruds.information.fields.image') }}</label>
         <x-dropzone id="image" name="image" action="{{ route('admin.information.storeMedia') }}" collection-name="information_image" max-file-size="2" max-width="4096" max-height="4096" max-files="1" />
         <div class="validation-message">
             {{ $errors->first('mediaCollections.information_image') }}

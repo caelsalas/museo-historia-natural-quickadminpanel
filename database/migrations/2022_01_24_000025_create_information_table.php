@@ -10,9 +10,9 @@ class CreateInformationTable extends Migration
     {
         Schema::create('information', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->longText('schedule');
-            $table->longText('location');
-            $table->longText('tickets');
+            $table->longText('schedule')->nullable();
+            $table->longText('location')->nullable();
+            $table->longText('tickets')->nullable();
             $table->timestamps();
         });
     }
