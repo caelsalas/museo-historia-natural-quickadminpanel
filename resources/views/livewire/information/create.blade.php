@@ -40,6 +40,16 @@
             {{ trans('cruds.information.fields.image_helper') }}
         </div>
     </div>
+    <div class="form-group {{ $errors->has('mediaCollections.information_image_en') ? 'invalid' : '' }}">
+        <label class="form-label" for="image_en">{{ trans('cruds.information.fields.image_en') }}</label>
+        <x-dropzone id="image_en" name="image_en" action="{{ route('admin.information.storeMedia') }}" collection-name="information_image_en" max-file-size="2" max-width="4096" max-height="4096" max-files="1" />
+        <div class="validation-message">
+            {{ $errors->first('mediaCollections.information_image_en') }}
+        </div>
+        <div class="help-block">
+            {{ trans('cruds.information.fields.image_en_helper') }}
+        </div>
+    </div>
 
     <div class="form-group">
         <button class="btn btn-indigo mr-2" type="submit">

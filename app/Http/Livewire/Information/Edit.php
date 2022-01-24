@@ -37,7 +37,8 @@ class Edit extends Component
     {
         $this->information      = $information;
         $this->mediaCollections = [
-            'information_image' => $information->image,
+            'information_image'    => $information->image,
+            'information_image_en' => $information->image_en,
         ];
     }
 
@@ -85,6 +86,14 @@ class Edit extends Component
                 'nullable',
             ],
             'mediaCollections.information_image.*.id' => [
+                'integer',
+                'exists:media,id',
+            ],
+            'mediaCollections.information_image_en' => [
+                'array',
+                'nullable',
+            ],
+            'mediaCollections.information_image_en.*.id' => [
                 'integer',
                 'exists:media,id',
             ],
