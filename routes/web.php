@@ -14,6 +14,7 @@ use App\Http\Controllers\Admin\EventTypeController;
 use App\Http\Controllers\Admin\ExhibitionRoomController;
 use App\Http\Controllers\Admin\HeaderController;
 use App\Http\Controllers\Admin\HomeController;
+use App\Http\Controllers\Admin\HomeSectionController;
 use App\Http\Controllers\Admin\InformationController;
 use App\Http\Controllers\Admin\PermissionController;
 use App\Http\Controllers\Admin\PublicationController;
@@ -92,8 +93,8 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['auth']], 
     Route::resource('education-categories', EducationCategoryController::class, ['except' => ['store', 'update', 'destroy', 'show']]);
 
     // Education
-    Route::post('education/media', [EducationController::class, 'storeMedia'])->name('education.storeMedia');
-    Route::resource('education', EducationController::class, ['except' => ['store', 'update', 'destroy', 'show']]);
+    Route::post('educations/media', [EducationController::class, 'storeMedia'])->name('educations.storeMedia');
+    Route::resource('educations', EducationController::class, ['except' => ['store', 'update', 'destroy', 'show']]);
 
     // Event Type
     Route::resource('event-types', EventTypeController::class, ['except' => ['store', 'update', 'destroy', 'show']]);
@@ -118,8 +119,11 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['auth']], 
     Route::resource('birthday-packages', BirthdayPackageController::class, ['except' => ['store', 'update', 'destroy', 'show']]);
 
     // Information
-    Route::post('information/media', [InformationController::class, 'storeMedia'])->name('information.storeMedia');
-    Route::resource('information', InformationController::class, ['except' => ['store', 'update', 'destroy', 'show']]);
+    Route::post('informations/media', [InformationController::class, 'storeMedia'])->name('informations.storeMedia');
+    Route::resource('informations', InformationController::class, ['except' => ['store', 'update', 'destroy', 'show']]);
+
+    // Home Section
+    Route::resource('home-sections', HomeSectionController::class, ['except' => ['store', 'update', 'destroy', 'show']]);
 });
 
 Route::group(['prefix' => 'profile', 'as' => 'profile.', 'middleware' => ['auth']], function () {

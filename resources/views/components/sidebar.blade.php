@@ -50,6 +50,26 @@
                         </a>
                     </li>
                 @endcan
+                @can('section_access')
+                    <li class="items-center">
+                        <a class="has-sub {{ request()->is("admin/home-sections*") ? "sidebar-nav-active" : "sidebar-nav" }}" href="#" onclick="window.openSubNav(this)">
+                            <i class="fa-fw fas c-sidebar-nav-icon far fa-file">
+                            </i>
+                            {{ trans('cruds.section.title') }}
+                        </a>
+                        <ul class="ml-4 subnav hidden">
+                            @can('home_section_access')
+                                <li class="items-center">
+                                    <a class="{{ request()->is("admin/home-sections*") ? "sidebar-nav-active" : "sidebar-nav" }}" href="{{ route("admin.home-sections.index") }}">
+                                        <i class="fa-fw c-sidebar-nav-icon fas fa-home">
+                                        </i>
+                                        {{ trans('cruds.homeSection.title') }}
+                                    </a>
+                                </li>
+                            @endcan
+                        </ul>
+                    </li>
+                @endcan
                 @can('subscription_access')
                     <li class="items-center">
                         <a class="{{ request()->is("admin/subscriptions*") ? "sidebar-nav-active" : "sidebar-nav" }}" href="{{ route("admin.subscriptions.index") }}">
@@ -61,7 +81,7 @@
                 @endcan
                 @can('information_access')
                     <li class="items-center">
-                        <a class="{{ request()->is("admin/information*") ? "sidebar-nav-active" : "sidebar-nav" }}" href="{{ route("admin.information.index") }}">
+                        <a class="{{ request()->is("admin/informations*") ? "sidebar-nav-active" : "sidebar-nav" }}" href="{{ route("admin.informations.index") }}">
                             <i class="fa-fw c-sidebar-nav-icon fas fa-info">
                             </i>
                             {{ trans('cruds.information.title') }}
@@ -227,7 +247,7 @@
                 @endcan
                 @can('education_management_access')
                     <li class="items-center">
-                        <a class="has-sub {{ request()->is("admin/education-categories*")||request()->is("admin/education*") ? "sidebar-nav-active" : "sidebar-nav" }}" href="#" onclick="window.openSubNav(this)">
+                        <a class="has-sub {{ request()->is("admin/education-categories*")||request()->is("admin/educations*") ? "sidebar-nav-active" : "sidebar-nav" }}" href="#" onclick="window.openSubNav(this)">
                             <i class="fa-fw fas c-sidebar-nav-icon fa-graduation-cap">
                             </i>
                             {{ trans('cruds.educationManagement.title') }}
@@ -244,7 +264,7 @@
                             @endcan
                             @can('education_access')
                                 <li class="items-center">
-                                    <a class="{{ request()->is("admin/education*") ? "sidebar-nav-active" : "sidebar-nav" }}" href="{{ route("admin.education.index") }}">
+                                    <a class="{{ request()->is("admin/educations*") ? "sidebar-nav-active" : "sidebar-nav" }}" href="{{ route("admin.educations.index") }}">
                                         <i class="fa-fw c-sidebar-nav-icon fas fa-graduation-cap">
                                         </i>
                                         {{ trans('cruds.education.title') }}

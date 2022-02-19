@@ -414,6 +414,26 @@ class PermissionsTableSeeder extends Seeder
                 'id'    => 101,
                 'title' => 'information_access',
             ],
+            [
+                'id'    => 102,
+                'title' => 'section_access',
+            ],
+            [
+                'id'    => 103,
+                'title' => 'home_section_create',
+            ],
+            [
+                'id'    => 104,
+                'title' => 'home_section_edit',
+            ],
+            [
+                'id'    => 105,
+                'title' => 'home_section_delete',
+            ],
+            [
+                'id'    => 106,
+                'title' => 'home_section_access',
+            ],
         ];
 
         Permission::insert($permissions);
